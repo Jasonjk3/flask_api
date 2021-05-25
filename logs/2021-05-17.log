@@ -1,0 +1,1136 @@
+[ERROR][20352][2021-05-17 18:06:47,878][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+[SQL: INSERT INTO weibo_comment (comment_id, item_id, uid, createtime, `text`, like_count) VALUES (%(comment_id)s, %(item_id)s, %(uid)s, %(createtime)s, %(text)s, %(like_count)s)]
+[parameters: ({'comment_id': '4633608511554277', 'item_id': '4633607949256971', 'uid': 7086922354, 'createtime': 'Wed May 05 21:36:59 +0800 2021', 'text': "<a href='/n/蒙牛乳业'>@蒙牛乳业</a> 进来反思", 'like_count': 6202}, {'comment_id': '4633608499499442', 'item_id': '4633607949256971', 'uid': 6310183460, 'createtime': 'Wed May 05 21:36:57 +0800 2021', 'text': '真的不要再浪费了，倒掉的时候真的好心疼。建议以后做菜都可以半份半份的选，不够再加也好过一次性端上桌然后吃不完倒掉', 'like_count': 945}, {'comment_id': '4633609594472644', 'item_id': '4633607949256971', 'uid': 5076884177, 'createtime': 'Wed May 05 21:41:18 +0800 2021', 'text': '从小学的，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦', 'like_count': 627}, {'comment_id': '4633608268288487', 'item_id': '4633607949256971', 'uid': 7350778973, 'createtime': 'Wed May 05 21:36:02 +0800 2021', 'text': '还有选秀节目倒奶<span class="url-icon"><img alt=[微笑] src="https://h5.sinaimg.cn/m/emoticon/icon/default/d_hehe-0be7e6251f.png" style="width:1em; height:1em;" /></span>', 'like_count': 98}, {'comment_id': '4633673356018397', 'item_id': '4633607949256971', 'uid': 5514859611, 'createtime': 'Thu May 06 01:54:40 +0800 2021', 'text': '庆幸我们生活在中国。国家今年的政策，严禁房地产资本进入农村，严守粮食红线。原因是我国现在还是粮食进口大国，万一国外联合制裁中国，我们能保证最基础的自给自足。', 'like_count': 508}, {'comment_id': '4633608188859754', 'item_id': '4633607949256971', 'uid': 6551082991, 'createtime': 'Wed May 05 21:35:43 +0800 2021', 'text': '每当此时 都会想到袁隆平对中国粮食安全做出的贡献 袁老牛逼', 'like_count': 5873}, {'comment_id': '4633609102955534', 'item_id': '4633607949256971', 'uid': 6082115982, 'createtime': 'Wed May 05 21:39:21 +0800 2021', 'text': '把倒牛奶的送过去', 'like_count': 2716}, {'comment_id': '4633608163689642', 'item_id': '4633607949256971', 'uid': 3371542644, 'createtime': 'Wed May 05 21:35:36 +0800 2021', 'text': '马上在小日本子的影响下，海产品也不安全了。', 'like_count': 1477}  ... displaying 10 of 21219 total bound parameter sets ...  {'comment_id': '4634276638758075', 'item_id': '4633570586920971', 'uid': 5491812826, 'createtime': 'Fri May 07 17:51:54 +0800 2021', 'text': '我爸感觉有点类似，但我又不好不给他，这种说话方式是对于你给了他钱，如果没改就会变成&quot;我把你养那么大，现在手头有点紧找你借点点钱你就莫得了，还没说不还你，你这种态度是指望不上你给我养老了，寒心，白眼狼&quot;不用问我怎么知道的<span class="url-icon"><img al ... (126 characters truncated) ...  class="url-icon"><img alt=[微笑] src="https://h5.sinaimg.cn/m/emoticon/icon/default/d_hehe-0be7e6251f.png" style="width:1em; height:1em;" /></span>感受过', 'like_count': 0}, {'comment_id': '4634270959930138', 'item_id': '4633570586920971', 'uid': 5653142768, 'createtime': 'Fri May 07 17:29:20 +0800 2021', 'text': '这是谁啊', 'like_count': 1})]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 756, in _write_bytes
+    self._sock.sendall(data)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+pymysql.err.OperationalError: (2006, "MySQL server has gone away (ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 44, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 84, in __exit__
+    compat.raise_(value, with_traceback=traceback)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 900, in rollback
+    util.raise_(rollback_err[1], with_traceback=rollback_err[2])
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 865, in rollback
+    t[1].rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2308, in rollback
+    self._do_rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2506, in _do_rollback
+    self._close_impl(try_deactivate=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2489, in _close_impl
+    self._connection_rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2481, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 960, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))")
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[ERROR][1000][2021-05-17 18:11:10,332][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+[SQL: INSERT INTO weibo_user (uid, username, url, following, followed, gender, location, edu, birthday, post_num) VALUES (%(uid)s, %(username)s, %(url)s, %(following)s, %(followed)s, %(gender)s, %(location)s, %(edu)s, %(birthday)s, %(post_num)s)]
+[parameters: ({'uid': 3291492954, 'username': '_Ginlheart_', 'url': 'https://weibo.com/u/3291492954?refer_flag=1001030106_&is_hot=1', 'following': '826', 'followed': '372', 'gender': 'f', 'location': '河南', 'edu': None, 'birthday': '狮子座', 'post_num': '1323'}, {'uid': 2690679155, 'username': '慕容玥衣', 'url': 'https://weibo.com/u/2690679155?refer_flag=1001030106_&is_hot=1', 'following': '1991', 'followed': '209', 'gender': 'f', 'location': '北京', 'edu': None, 'birthday': '双子座', 'post_num': '3553'}, {'uid': 7430449043, 'username': 'A午夜晚风飘', 'url': 'https://weibo.com/u/7430449043?refer_flag=1001030106_&is_hot=1', 'following': '199', 'followed': '223', 'gender': 'f', 'location': '广东', 'edu': None, 'birthday': '1979年2月20日', 'post_num': '5998'}, {'uid': 2028998533, 'username': '天山童童姥', 'url': 'https://weibo.com/u/2028998533?refer_flag=1001030106_&is_hot=1', 'following': '397', 'followed': '610', 'gender': 'f', 'location': '北京 朝阳区', 'edu': '北京舞蹈学院', 'birthday': '1982年9月6日', 'post_num': '2692'}, {'uid': 5307366622, 'username': '嘉嘉嘉嘉嘉41', 'url': 'https://weibo.com/u/5307366622?refer_flag=1001030106_&is_hot=1', 'following': '514', 'followed': '597', 'gender': 'm', 'location': '江苏 南京', 'edu': None, 'birthday': '1994年8月11日', 'post_num': '76'}, {'uid': 6406602277, 'username': '没事儿勿cue', 'url': 'https://weibo.com/u/6406602277?refer_flag=1001030106_&is_hot=1', 'following': '712', 'followed': '4829', 'gender': 'f', 'location': '天津', 'edu': '集美大学', 'birthday': '2020年1月16日', 'post_num': '4436'}, {'uid': 6919529344, 'username': '今天还在闲鱼嘛', 'url': 'https://weibo.com/u/6919529344?refer_flag=1001030106_&is_hot=1', 'following': '207', 'followed': '53', 'gender': 'f', 'location': '北京', 'edu': '北京四中', 'birthday': '2000年9月28日', 'post_num': '405'}, {'uid': 6020435023, 'username': 'honey丫999', 'url': 'https://weibo.com/u/6020435023?refer_flag=1001030106_&is_hot=1', 'following': '488', 'followed': '109', 'gender': 'f', 'location': '广东 广州', 'edu': None, 'birthday': None, 'post_num': '45'}  ... displaying 10 of 11013 total bound parameter sets ...  {'uid': 1871928212, 'username': '沉檀记', 'url': 'https://weibo.com/wangqinshan?refer_flag=1001030106_&is_hot=1', 'following': '196', 'followed': '490', 'gender': 'f', 'location': '其他', 'edu': None, 'birthday': '1902年6月2日', 'post_num': '2023'}, {'uid': 2167288011, 'username': '不要脸的少女', 'url': 'https://weibo.com/haelvans?refer_flag=1001030106_&is_hot=1', 'following': '978', 'followed': '305', 'gender': 'f', 'location': '海外', 'edu': None, 'birthday': '双子座', 'post_num': '3228'})]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 756, in _write_bytes
+    self._sock.sendall(data)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+pymysql.err.OperationalError: (2006, "MySQL server has gone away (ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 42, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 84, in __exit__
+    compat.raise_(value, with_traceback=traceback)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 900, in rollback
+    util.raise_(rollback_err[1], with_traceback=rollback_err[2])
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 865, in rollback
+    t[1].rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2308, in rollback
+    self._do_rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2506, in _do_rollback
+    self._close_impl(try_deactivate=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2489, in _close_impl
+    self._connection_rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2481, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 960, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))")
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[ERROR][16332][2021-05-17 18:13:55,835][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+[SQL: INSERT INTO weibo_user (uid, username, url, following, followed, gender, location, edu, birthday, post_num) VALUES (%(uid)s, %(username)s, %(url)s, %(following)s, %(followed)s, %(gender)s, %(location)s, %(edu)s, %(birthday)s, %(post_num)s)]
+[parameters: ({'uid': 3291492954, 'username': '_Ginlheart_', 'url': 'https://weibo.com/u/3291492954?refer_flag=1001030106_&is_hot=1', 'following': '826', 'followed': '372', 'gender': 'f', 'location': '河南', 'edu': None, 'birthday': '狮子座', 'post_num': '1323'}, {'uid': 2690679155, 'username': '慕容玥衣', 'url': 'https://weibo.com/u/2690679155?refer_flag=1001030106_&is_hot=1', 'following': '1991', 'followed': '209', 'gender': 'f', 'location': '北京', 'edu': None, 'birthday': '双子座', 'post_num': '3553'}, {'uid': 7430449043, 'username': 'A午夜晚风飘', 'url': 'https://weibo.com/u/7430449043?refer_flag=1001030106_&is_hot=1', 'following': '199', 'followed': '223', 'gender': 'f', 'location': '广东', 'edu': None, 'birthday': '1979年2月20日', 'post_num': '5998'}, {'uid': 2028998533, 'username': '天山童童姥', 'url': 'https://weibo.com/u/2028998533?refer_flag=1001030106_&is_hot=1', 'following': '397', 'followed': '610', 'gender': 'f', 'location': '北京 朝阳区', 'edu': '北京舞蹈学院', 'birthday': '1982年9月6日', 'post_num': '2692'}, {'uid': 5307366622, 'username': '嘉嘉嘉嘉嘉41', 'url': 'https://weibo.com/u/5307366622?refer_flag=1001030106_&is_hot=1', 'following': '514', 'followed': '597', 'gender': 'm', 'location': '江苏 南京', 'edu': None, 'birthday': '1994年8月11日', 'post_num': '76'}, {'uid': 6406602277, 'username': '没事儿勿cue', 'url': 'https://weibo.com/u/6406602277?refer_flag=1001030106_&is_hot=1', 'following': '712', 'followed': '4829', 'gender': 'f', 'location': '天津', 'edu': '集美大学', 'birthday': '2020年1月16日', 'post_num': '4436'}, {'uid': 6919529344, 'username': '今天还在闲鱼嘛', 'url': 'https://weibo.com/u/6919529344?refer_flag=1001030106_&is_hot=1', 'following': '207', 'followed': '53', 'gender': 'f', 'location': '北京', 'edu': '北京四中', 'birthday': '2000年9月28日', 'post_num': '405'}, {'uid': 6020435023, 'username': 'honey丫999', 'url': 'https://weibo.com/u/6020435023?refer_flag=1001030106_&is_hot=1', 'following': '488', 'followed': '109', 'gender': 'f', 'location': '广东 广州', 'edu': None, 'birthday': None, 'post_num': '45'}  ... displaying 10 of 11013 total bound parameter sets ...  {'uid': 1871928212, 'username': '沉檀记', 'url': 'https://weibo.com/wangqinshan?refer_flag=1001030106_&is_hot=1', 'following': '196', 'followed': '490', 'gender': 'f', 'location': '其他', 'edu': None, 'birthday': '1902年6月2日', 'post_num': '2023'}, {'uid': 2167288011, 'username': '不要脸的少女', 'url': 'https://weibo.com/haelvans?refer_flag=1001030106_&is_hot=1', 'following': '978', 'followed': '305', 'gender': 'f', 'location': '海外', 'edu': None, 'birthday': '双子座', 'post_num': '3228'})]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 756, in _write_bytes
+    self._sock.sendall(data)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+pymysql.err.OperationalError: (2006, "MySQL server has gone away (ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 42, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 84, in __exit__
+    compat.raise_(value, with_traceback=traceback)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 900, in rollback
+    util.raise_(rollback_err[1], with_traceback=rollback_err[2])
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 865, in rollback
+    t[1].rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2308, in rollback
+    self._do_rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2506, in _do_rollback
+    self._close_impl(try_deactivate=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2489, in _close_impl
+    self._connection_rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2481, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 960, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))")
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[ERROR][22756][2021-05-17 18:25:39,752][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 206, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1153, "Got a packet bigger than 'max_allowed_packet' bytes")
+[SQL: INSERT INTO weibo_comment (comment_id, item_id, uid, createtime, `text`, like_count) VALUES (%(comment_id)s, %(item_id)s, %(uid)s, %(createtime)s, %(text)s, %(like_count)s)]
+[parameters: ({'comment_id': '4633608511554277', 'item_id': '4633607949256971', 'uid': 7086922354, 'createtime': 'Wed May 05 21:36:59 +0800 2021', 'text': "<a href='/n/蒙牛乳业'>@蒙牛乳业</a> 进来反思", 'like_count': 6202}, {'comment_id': '4633608499499442', 'item_id': '4633607949256971', 'uid': 6310183460, 'createtime': 'Wed May 05 21:36:57 +0800 2021', 'text': '真的不要再浪费了，倒掉的时候真的好心疼。建议以后做菜都可以半份半份的选，不够再加也好过一次性端上桌然后吃不完倒掉', 'like_count': 945}, {'comment_id': '4633609594472644', 'item_id': '4633607949256971', 'uid': 5076884177, 'createtime': 'Wed May 05 21:41:18 +0800 2021', 'text': '从小学的，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦', 'like_count': 627}, {'comment_id': '4633608268288487', 'item_id': '4633607949256971', 'uid': 7350778973, 'createtime': 'Wed May 05 21:36:02 +0800 2021', 'text': '还有选秀节目倒奶<span class="url-icon"><img alt=[微笑] src="https://h5.sinaimg.cn/m/emoticon/icon/default/d_hehe-0be7e6251f.png" style="width:1em; height:1em;" /></span>', 'like_count': 98}, {'comment_id': '4633673356018397', 'item_id': '4633607949256971', 'uid': 5514859611, 'createtime': 'Thu May 06 01:54:40 +0800 2021', 'text': '庆幸我们生活在中国。国家今年的政策，严禁房地产资本进入农村，严守粮食红线。原因是我国现在还是粮食进口大国，万一国外联合制裁中国，我们能保证最基础的自给自足。', 'like_count': 508}, {'comment_id': '4633608188859754', 'item_id': '4633607949256971', 'uid': 6551082991, 'createtime': 'Wed May 05 21:35:43 +0800 2021', 'text': '每当此时 都会想到袁隆平对中国粮食安全做出的贡献 袁老牛逼', 'like_count': 5873}, {'comment_id': '4633609102955534', 'item_id': '4633607949256971', 'uid': 6082115982, 'createtime': 'Wed May 05 21:39:21 +0800 2021', 'text': '把倒牛奶的送过去', 'like_count': 2716}, {'comment_id': '4633608163689642', 'item_id': '4633607949256971', 'uid': 3371542644, 'createtime': 'Wed May 05 21:35:36 +0800 2021', 'text': '马上在小日本子的影响下，海产品也不安全了。', 'like_count': 1477}  ... displaying 10 of 5000 total bound parameter sets ...  {'comment_id': '4633888167559602', 'item_id': '4633782156005139', 'uid': 2184417142, 'createtime': 'Thu May 06 16:08:14 +0800 2021', 'text': '滚什么筒？这种我家也有，就是吸水拖把，你特么滚给我看看？', 'like_count': 0}, {'comment_id': '4633888007653323', 'item_id': '4633782156005139', 'uid': 2264336357, 'createtime': 'Thu May 06 16:07:37 +0800 2021', 'text': '挺规范的', 'like_count': 0})]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 756, in _write_bytes
+    self._sock.sendall(data)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+pymysql.err.OperationalError: (2006, "MySQL server has gone away (ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 49, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 84, in __exit__
+    compat.raise_(value, with_traceback=traceback)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 900, in rollback
+    util.raise_(rollback_err[1], with_traceback=rollback_err[2])
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 865, in rollback
+    t[1].rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2308, in rollback
+    self._do_rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2506, in _do_rollback
+    self._close_impl(try_deactivate=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2489, in _close_impl
+    self._connection_rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 2481, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 960, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 958, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\default.py", line 667, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 479, in rollback
+    self._execute_command(COMMAND.COM_QUERY, "ROLLBACK")
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 814, in _execute_command
+    self._write_bytes(packet)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 760, in _write_bytes
+    CR.CR_SERVER_GONE_ERROR, "MySQL server has gone away (%r)" % (e,)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))")
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[ERROR][10148][2021-05-17 18:26:23,956][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '3291492954' for key 'weibo_user.PRIMARY'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 44, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '3291492954' for key 'weibo_user.PRIMARY'")
+[SQL: INSERT INTO weibo_user (uid, username, url, following, followed, gender, location, edu, birthday, post_num) VALUES (%(uid)s, %(username)s, %(url)s, %(following)s, %(followed)s, %(gender)s, %(location)s, %(edu)s, %(birthday)s, %(post_num)s)]
+[parameters: ({'uid': 3291492954, 'username': '_Ginlheart_', 'url': 'https://weibo.com/u/3291492954?refer_flag=1001030106_&is_hot=1', 'following': '826', 'followed': '372', 'gender': 'f', 'location': '河南', 'edu': None, 'birthday': '狮子座', 'post_num': '1323'}, {'uid': 2690679155, 'username': '慕容玥衣', 'url': 'https://weibo.com/u/2690679155?refer_flag=1001030106_&is_hot=1', 'following': '1991', 'followed': '209', 'gender': 'f', 'location': '北京', 'edu': None, 'birthday': '双子座', 'post_num': '3553'}, {'uid': 7430449043, 'username': 'A午夜晚风飘', 'url': 'https://weibo.com/u/7430449043?refer_flag=1001030106_&is_hot=1', 'following': '199', 'followed': '223', 'gender': 'f', 'location': '广东', 'edu': None, 'birthday': '1979年2月20日', 'post_num': '5998'}, {'uid': 2028998533, 'username': '天山童童姥', 'url': 'https://weibo.com/u/2028998533?refer_flag=1001030106_&is_hot=1', 'following': '397', 'followed': '610', 'gender': 'f', 'location': '北京 朝阳区', 'edu': '北京舞蹈学院', 'birthday': '1982年9月6日', 'post_num': '2692'}, {'uid': 5307366622, 'username': '嘉嘉嘉嘉嘉41', 'url': 'https://weibo.com/u/5307366622?refer_flag=1001030106_&is_hot=1', 'following': '514', 'followed': '597', 'gender': 'm', 'location': '江苏 南京', 'edu': None, 'birthday': '1994年8月11日', 'post_num': '76'}, {'uid': 6406602277, 'username': '没事儿勿cue', 'url': 'https://weibo.com/u/6406602277?refer_flag=1001030106_&is_hot=1', 'following': '712', 'followed': '4829', 'gender': 'f', 'location': '天津', 'edu': '集美大学', 'birthday': '2020年1月16日', 'post_num': '4436'}, {'uid': 6919529344, 'username': '今天还在闲鱼嘛', 'url': 'https://weibo.com/u/6919529344?refer_flag=1001030106_&is_hot=1', 'following': '207', 'followed': '53', 'gender': 'f', 'location': '北京', 'edu': '北京四中', 'birthday': '2000年9月28日', 'post_num': '405'}, {'uid': 6020435023, 'username': 'honey丫999', 'url': 'https://weibo.com/u/6020435023?refer_flag=1001030106_&is_hot=1', 'following': '488', 'followed': '109', 'gender': 'f', 'location': '广东 广州', 'edu': None, 'birthday': None, 'post_num': '45'}  ... displaying 10 of 1000 total bound parameter sets ...  {'uid': 5977269663, 'username': 'ying的糯仙贝', 'url': 'https://weibo.com/u/5977269663?refer_flag=1001030106_&is_hot=1', 'following': '62', 'followed': '267', 'gender': 'f', 'location': '江苏 南京', 'edu': None, 'birthday': '狮子座', 'post_num': '1464'}, {'uid': 6088559813, 'username': '等你的个人巡演', 'url': 'https://weibo.com/u/6088559813?refer_flag=1001030106_&is_hot=1', 'following': '4503', 'followed': '533', 'gender': 'f', 'location': '山东 菏泽', 'edu': None, 'birthday': '天蝎座', 'post_num': '3439'})]
+(Background on this error at: http://sqlalche.me/e/14/gkpj)
+[ERROR][20308][2021-05-17 18:29:34,917][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '3291492954' for key 'weibo_user.PRIMARY'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 55, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '3291492954' for key 'weibo_user.PRIMARY'")
+[SQL: INSERT INTO weibo_user (uid, username, url, following, followed, gender, location, edu, birthday, post_num) VALUES (%(uid)s, %(username)s, %(url)s, %(following)s, %(followed)s, %(gender)s, %(location)s, %(edu)s, %(birthday)s, %(post_num)s)]
+[parameters: ({'uid': 3291492954, 'username': '_Ginlheart_', 'url': 'https://weibo.com/u/3291492954?refer_flag=1001030106_&is_hot=1', 'following': '826', 'followed': '372', 'gender': 'f', 'location': '河南', 'edu': None, 'birthday': '狮子座', 'post_num': '1323'}, {'uid': 2690679155, 'username': '慕容玥衣', 'url': 'https://weibo.com/u/2690679155?refer_flag=1001030106_&is_hot=1', 'following': '1991', 'followed': '209', 'gender': 'f', 'location': '北京', 'edu': None, 'birthday': '双子座', 'post_num': '3553'}, {'uid': 7430449043, 'username': 'A午夜晚风飘', 'url': 'https://weibo.com/u/7430449043?refer_flag=1001030106_&is_hot=1', 'following': '199', 'followed': '223', 'gender': 'f', 'location': '广东', 'edu': None, 'birthday': '1979年2月20日', 'post_num': '5998'}, {'uid': 2028998533, 'username': '天山童童姥', 'url': 'https://weibo.com/u/2028998533?refer_flag=1001030106_&is_hot=1', 'following': '397', 'followed': '610', 'gender': 'f', 'location': '北京 朝阳区', 'edu': '北京舞蹈学院', 'birthday': '1982年9月6日', 'post_num': '2692'}, {'uid': 5307366622, 'username': '嘉嘉嘉嘉嘉41', 'url': 'https://weibo.com/u/5307366622?refer_flag=1001030106_&is_hot=1', 'following': '514', 'followed': '597', 'gender': 'm', 'location': '江苏 南京', 'edu': None, 'birthday': '1994年8月11日', 'post_num': '76'}, {'uid': 6406602277, 'username': '没事儿勿cue', 'url': 'https://weibo.com/u/6406602277?refer_flag=1001030106_&is_hot=1', 'following': '712', 'followed': '4829', 'gender': 'f', 'location': '天津', 'edu': '集美大学', 'birthday': '2020年1月16日', 'post_num': '4436'}, {'uid': 6919529344, 'username': '今天还在闲鱼嘛', 'url': 'https://weibo.com/u/6919529344?refer_flag=1001030106_&is_hot=1', 'following': '207', 'followed': '53', 'gender': 'f', 'location': '北京', 'edu': '北京四中', 'birthday': '2000年9月28日', 'post_num': '405'}, {'uid': 6020435023, 'username': 'honey丫999', 'url': 'https://weibo.com/u/6020435023?refer_flag=1001030106_&is_hot=1', 'following': '488', 'followed': '109', 'gender': 'f', 'location': '广东 广州', 'edu': None, 'birthday': None, 'post_num': '45'}  ... displaying 10 of 1000 total bound parameter sets ...  {'uid': 5977269663, 'username': 'ying的糯仙贝', 'url': 'https://weibo.com/u/5977269663?refer_flag=1001030106_&is_hot=1', 'following': '62', 'followed': '267', 'gender': 'f', 'location': '江苏 南京', 'edu': None, 'birthday': '狮子座', 'post_num': '1464'}, {'uid': 6088559813, 'username': '等你的个人巡演', 'url': 'https://weibo.com/u/6088559813?refer_flag=1001030106_&is_hot=1', 'following': '4503', 'followed': '533', 'gender': 'f', 'location': '山东 菏泽', 'edu': None, 'birthday': '天蝎座', 'post_num': '3439'})]
+(Background on this error at: http://sqlalche.me/e/14/gkpj)
+[ERROR][18780][2021-05-17 18:39:16,999][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '3291492954' for key 'weibo_user.PRIMARY'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 55, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '3291492954' for key 'weibo_user.PRIMARY'")
+[SQL: INSERT INTO weibo_user (uid, username, url, following, followed, gender, location, edu, birthday, post_num) VALUES (%(uid)s, %(username)s, %(url)s, %(following)s, %(followed)s, %(gender)s, %(location)s, %(edu)s, %(birthday)s, %(post_num)s)]
+[parameters: ({'uid': 3291492954, 'username': '_Ginlheart_', 'url': 'https://weibo.com/u/3291492954?refer_flag=1001030106_&is_hot=1', 'following': '826', 'followed': '372', 'gender': 'f', 'location': '河南', 'edu': None, 'birthday': '狮子座', 'post_num': '1323'}, {'uid': 2690679155, 'username': '慕容玥衣', 'url': 'https://weibo.com/u/2690679155?refer_flag=1001030106_&is_hot=1', 'following': '1991', 'followed': '209', 'gender': 'f', 'location': '北京', 'edu': None, 'birthday': '双子座', 'post_num': '3553'}, {'uid': 7430449043, 'username': 'A午夜晚风飘', 'url': 'https://weibo.com/u/7430449043?refer_flag=1001030106_&is_hot=1', 'following': '199', 'followed': '223', 'gender': 'f', 'location': '广东', 'edu': None, 'birthday': '1979年2月20日', 'post_num': '5998'}, {'uid': 2028998533, 'username': '天山童童姥', 'url': 'https://weibo.com/u/2028998533?refer_flag=1001030106_&is_hot=1', 'following': '397', 'followed': '610', 'gender': 'f', 'location': '北京 朝阳区', 'edu': '北京舞蹈学院', 'birthday': '1982年9月6日', 'post_num': '2692'}, {'uid': 5307366622, 'username': '嘉嘉嘉嘉嘉41', 'url': 'https://weibo.com/u/5307366622?refer_flag=1001030106_&is_hot=1', 'following': '514', 'followed': '597', 'gender': 'm', 'location': '江苏 南京', 'edu': None, 'birthday': '1994年8月11日', 'post_num': '76'}, {'uid': 6406602277, 'username': '没事儿勿cue', 'url': 'https://weibo.com/u/6406602277?refer_flag=1001030106_&is_hot=1', 'following': '712', 'followed': '4829', 'gender': 'f', 'location': '天津', 'edu': '集美大学', 'birthday': '2020年1月16日', 'post_num': '4436'}, {'uid': 6919529344, 'username': '今天还在闲鱼嘛', 'url': 'https://weibo.com/u/6919529344?refer_flag=1001030106_&is_hot=1', 'following': '207', 'followed': '53', 'gender': 'f', 'location': '北京', 'edu': '北京四中', 'birthday': '2000年9月28日', 'post_num': '405'}, {'uid': 6020435023, 'username': 'honey丫999', 'url': 'https://weibo.com/u/6020435023?refer_flag=1001030106_&is_hot=1', 'following': '488', 'followed': '109', 'gender': 'f', 'location': '广东 广州', 'edu': None, 'birthday': None, 'post_num': '45'}  ... displaying 10 of 1000 total bound parameter sets ...  {'uid': 5977269663, 'username': 'ying的糯仙贝', 'url': 'https://weibo.com/u/5977269663?refer_flag=1001030106_&is_hot=1', 'following': '62', 'followed': '267', 'gender': 'f', 'location': '江苏 南京', 'edu': None, 'birthday': '狮子座', 'post_num': '1464'}, {'uid': 6088559813, 'username': '等你的个人巡演', 'url': 'https://weibo.com/u/6088559813?refer_flag=1001030106_&is_hot=1', 'following': '4503', 'followed': '533', 'gender': 'f', 'location': '山东 菏泽', 'edu': None, 'birthday': '天蝎座', 'post_num': '3439'})]
+(Background on this error at: http://sqlalche.me/e/14/gkpj)
+[ERROR][10208][2021-05-17 18:41:27,933][app.py:1892] log_exception - Exception on /api_v1/weibo/test [GET]
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect string value: '\\xF0\\x9F\\x87\\xA8\\xF0\\x9F...' for column 'text' at row 16")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\PycharmProjects\32Git\flask-demo\application\api_v1\controller\weiboController.py", line 60, in test
+    mysql_db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3262, in flush
+    self._flush(objects)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3402, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\session.py", line 3362, in _flush
+    flush_context.execute()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\orm\persistence.py", line 1095, in _emit_insert_statements
+    statement, multiparams, execution_options=execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1461, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\engine\base.py", line 1751, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 148, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 179, in executemany
+    self._get_db().encoding,
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\xie\Anaconda3\envs\DataServer\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect string value: '\\xF0\\x9F\\x87\\xA8\\xF0\\x9F...' for column 'text' at row 16")
+[SQL: INSERT INTO weibo_comment (comment_id, item_id, uid, createtime, `text`, like_count) VALUES (%(comment_id)s, %(item_id)s, %(uid)s, %(createtime)s, %(text)s, %(like_count)s)]
+[parameters: ({'comment_id': '4633608511554277', 'item_id': '4633607949256971', 'uid': 7086922354, 'createtime': 'Wed May 05 21:36:59 +0800 2021', 'text': "<a href='/n/蒙牛乳业'>@蒙牛乳业</a> 进来反思", 'like_count': 6202}, {'comment_id': '4633608499499442', 'item_id': '4633607949256971', 'uid': 6310183460, 'createtime': 'Wed May 05 21:36:57 +0800 2021', 'text': '真的不要再浪费了，倒掉的时候真的好心疼。建议以后做菜都可以半份半份的选，不够再加也好过一次性端上桌然后吃不完倒掉', 'like_count': 945}, {'comment_id': '4633609594472644', 'item_id': '4633607949256971', 'uid': 5076884177, 'createtime': 'Wed May 05 21:41:18 +0800 2021', 'text': '从小学的，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦', 'like_count': 627}, {'comment_id': '4633608268288487', 'item_id': '4633607949256971', 'uid': 7350778973, 'createtime': 'Wed May 05 21:36:02 +0800 2021', 'text': '还有选秀节目倒奶<span class="url-icon"><img alt=[微笑] src="https://h5.sinaimg.cn/m/emoticon/icon/default/d_hehe-0be7e6251f.png" style="width:1em; height:1em;" /></span>', 'like_count': 98}, {'comment_id': '4633673356018397', 'item_id': '4633607949256971', 'uid': 5514859611, 'createtime': 'Thu May 06 01:54:40 +0800 2021', 'text': '庆幸我们生活在中国。国家今年的政策，严禁房地产资本进入农村，严守粮食红线。原因是我国现在还是粮食进口大国，万一国外联合制裁中国，我们能保证最基础的自给自足。', 'like_count': 508}, {'comment_id': '4633608188859754', 'item_id': '4633607949256971', 'uid': 6551082991, 'createtime': 'Wed May 05 21:35:43 +0800 2021', 'text': '每当此时 都会想到袁隆平对中国粮食安全做出的贡献 袁老牛逼', 'like_count': 5873}, {'comment_id': '4633609102955534', 'item_id': '4633607949256971', 'uid': 6082115982, 'createtime': 'Wed May 05 21:39:21 +0800 2021', 'text': '把倒牛奶的送过去', 'like_count': 2716}, {'comment_id': '4633608163689642', 'item_id': '4633607949256971', 'uid': 3371542644, 'createtime': 'Wed May 05 21:35:36 +0800 2021', 'text': '马上在小日本子的影响下，海产品也不安全了。', 'like_count': 1477}  ... displaying 10 of 1000 total bound parameter sets ...  {'comment_id': '4632715472667781', 'item_id': '4632521930967056', 'uid': 2170633884, 'createtime': 'Mon May 03 10:28:22 +0800 2021', 'text': '别给偷国人发现', 'like_count': 4}, {'comment_id': '4632705344472232', 'item_id': '4632521930967056', 'uid': 1642407160, 'createtime': 'Mon May 03 09:48:08 +0800 2021', 'text': '不否认中医能治一些病  但骗子太多 对中医解决不了的病症也大放厥词声称能治好 这就不仅仅是技术上的问题了 这是行业黑幕了 一下给你开上千元的药让你吃几个月半年都没效果的大有人在 行业水极深 极混乱 这个不解决的话 中医技术再好也永远无法给自己正名 自己把自己玩臭了 要想发扬中医国家要好好管管', 'like_count': 5})]
+(Background on this error at: http://sqlalche.me/e/14/9h9h)
